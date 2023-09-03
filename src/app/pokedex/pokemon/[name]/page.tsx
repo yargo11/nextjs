@@ -5,12 +5,6 @@ interface PokemonProps {
     params: {
         name: string
     }
-    species: {
-        name: string
-    }
-    sprites: {
-        front_default: string
-    }
 }
 
 export default async function Pokemon({ params }: PokemonProps) {

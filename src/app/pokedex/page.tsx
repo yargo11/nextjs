@@ -15,18 +15,19 @@ export default async function Pokedex() {
     const pokedex = await response.json()
 
     return (
-        <>
+        <div>
             <ol style={{ width: '300px' }}>
                 {pokedex.results.map((pokemon: PokedexProps) => {
                     return (
                         <li key={pokemon.name} >
-                            <Link href={`/pokedex/pokemon/${pokemon.name}`} prefetch={false}>
+                            <Link href={`/pokedex/pokemon/${pokemon.name}`}>
                                 <PokemonComp url={pokemon.url} />
                             </Link>
                         </li>
                     )
                 })}
             </ol>
-        </>
+            <Link href="/">Voltar</Link>
+        </div>
     )
 }
